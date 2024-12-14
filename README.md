@@ -34,7 +34,7 @@ The Vision Nest is an interactive web application designed to visualize and cust
 ## How to Use
 1. Clone the repository:
    ```bash
-   git clone <https://github.com/sakshi01coder/Vision_nest>
+   git clone https://github.com/sakshi01coder/Vision_nest
    ```
 
 2. Navigate to the project directory:
