@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> The Vision Nest Gallery</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #999, #333);
+            position: relative;
+            flex-direction: column;
+            /* Stack children vertically */
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            width: 100%;
+            background-color: #000000;
+            padding: 10px 0;
+            position: absolute;
+            /* Fixed at the top */
+            top: 0;
+            left: 0;
+            z-index: 10;
+            /* Stay above other elements */
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            background-color: #444;
+        }
+        /* Gallery Heading */
+        .heading {
+            color:whitesmoke;
+            font-size: 40px;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-style: italic;
+            
+        }
+        /* Background Animation Container */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            animation: shapeAnimation 8s linear infinite;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .shape.circle {
+            border-radius: 50%;
+        }
+
+        @keyframes shapeAnimation {
+            0% {
+                transform: translateY(0) scale(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Laptop Screen */
+        .laptop {
+            width: 800px;
+            height: 350px;
+            background: #333;
+            border: 15px solid #222;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 250px;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: #111;
+            overflow: hidden;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slideshow {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slideshow .active {
+            opacity: 1;
+        }
+        /* Footer Slider */
+        .footer {
+            width: 100%;
+            background-color: #000000;
+            padding: 20px;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-slider {
+            display: flex;
+            overflow: hidden;
+            width: 60%;
+        }
+
+        .footer-slider .slide-set {
+            display: flex;
+            flex-shrink: 0;
+            width: 100%;
+            justify-content: space-between;
+            animation: popUp 0.5s ease-in-out;
+        }
+
+        .footer-slider img {
+            width: 30%;
+            border-radius: 10px;
+            margin: 0 5px;
+        }
+
+        @keyframes popUp {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+    </div>
+    <!-- Gallery Heading -->
+    <h1 class="heading">Our Gallery</h1>
+    <div class="background-animation"></div>
+    <div class="laptop">
+        <div class="screen">
+            <div class="slideshow">
+                <img src="img/gallery1.jpg" class="slide active" alt="Interior Design 1">
+                <img src="img/gallery2.jpg" class="slide" alt="Interior Design 2">
+                <img src="img/gallery3.jpg" class="slide" alt="Interior Design 3">
+                <img src="img/gallery4.jpg" class="slide" alt="Interior Design 4">
+                <img src="img/gallery5.jpg" class="slide" alt="Interior Design 5">
+                <img src="img/gallery6.jpg" class="slide" alt="Interior Design 6">
+                <img src="img/gallery7.jpg" class="slide" alt="Interior Design 7">
+                <img src="img/gallery8.jpg" class="slide" alt="Interior Design 8">
+                <img src="img/gallery9.jpg" class="slide" alt="Interior Design 9">
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer Slider -->
+    <div class="footer">
+        <div class="footer-slider" id="footerSlider">
+            <span class="arrow left" onclick="prevFooterSet()">&#x276E;</span> <!-- Left arrow -->
+            <div class="slide-set">
+                <img src="img/Footer1 (1).jpeg" alt="Footer Image 1">
+                <img src="img/Footer2 (1).jpeg" alt="Footer Image 2">
+                <img src="img/Footer3 (1).jpeg" alt="Footer Image 3">
+            </div>
+            <div class="slide-set">
+                <img src="img/Footer5 (1).jpeg" alt="Footer Image 4">
+                <img src="img/Footer4 (1).jpeg" alt="Footer Image 5">
+                <img src="img/Footer6 (1).jpeg" alt="Footer Image 6">
+            </div>
+            <div class="slide-set">
+                <img src="img/Footer9.jpeg" alt="Footer Image 7">
+                <img src="img/Footer7.jpeg" alt="Footer Image 8">
+                <img src="img/Footer8.jpeg" alt="Footer Image 9">
+            </div>
+            <span class="arrow right" onclick="nextFooterSet()">&#x276F;</span> <!-- Right arrow -->
+        </div>
+    </div>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slideshow .slide');
+
+        // Slideshow functionality
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function changeSlideOnClick() {
+            showNextSlide();
+        }
+
+        // Set interval to change slide every 3 seconds
+        setInterval(showNextSlide, 3000);
+
+        // Background shape animation
+        function createShape() {
+            const shape = document.createElement('div');
+            shape.classList.add('shape');
+            shape.classList.add(Math.random() > 0.5 ? 'circle' : 'square');
+
+            const colors = ['#FFFFFF'];
+            shape.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+            document.body.appendChild(shape);
+
+            // Random size and position for shapes
+            const size = Math.random() * 80 + 40; // Increase size range for larger shapes
+            shape.style.width = `${size}px`;
+            shape.style.height = `${size}px`;
+            shape.style.left = `${Math.random() * 100}vw`;
+            shape.style.animationDuration = `${Math.random() * 5 + 5}s`;
+
+            // Change slide on shape click
+            shape.addEventListener('click', changeSlideOnClick);
+
+            // Remove shape from DOM after animation ends
+            shape.addEventListener('animationend', () => {
+                shape.remove();
+            });
+        }
+
+        // Create shapes every 600 milliseconds
+        setInterval(createShape, 600);
+
+       const slideSets = document.querySelectorAll('.footer-slider .slide-set');
+        let currentSet = 0;
+
+        function showNextFooterSet() {
+            slideSets.forEach((set, index) => {
+                set.style.display = index === currentSet ? 'flex' : 'none';
+            });
+            currentSet = (currentSet + 1) % slideSets.length;
+        }
+
+        setInterval(showNextFooterSet, 4000);
+        showNextFooterSet();
+    </script>
+</body>
+
+</html>
