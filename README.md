@@ -49,9 +49,6 @@ The Vision Nest is an interactive web application designed to visualize and cust
 - Adding pre-defined templates and design suggestions.
 - Support for exporting designs in various file formats.
 
-## Credits
-This project was developed as part of [The Vision Nest] initiative in June 2024. Special thanks to users who provided invaluable feedback to improve the application.
-
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
