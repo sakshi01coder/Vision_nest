@@ -1,0 +1,64 @@
+/* Video Container */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Video Element */
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Video Overlay (Optional) */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    opacity: 0; /* Set to 1 if you want it visible by default */
+    transition: opacity 0.5s ease;
+}
+
+.video-container:hover .video-overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Text inside the overlay */
+.video-overlay h2 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.video-overlay p {
+    font-size: 20px;
+    margin: 10px 0 0;
+}
+
+/* Button styles (Optional) */
+.video-overlay .btn {
+    background: #a08d7c;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.video-overlay .btn:hover {
+    background: #555;
+    color: #fff;
+}
